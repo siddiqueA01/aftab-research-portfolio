@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1160">
+ <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#104438"/><stop offset=".6" stop-color="#0c1617"/><stop offset="1" stop-color="#06070b"/></linearGradient><radialGradient id="flare"><stop stop-color="#47d2ab" stop-opacity=".36"/><stop offset="1" stop-color="#47d2ab" stop-opacity="0"/></radialGradient><pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0H0V54" stroke="#ffffff" stroke-width=".7" opacity=".17" fill="none"/></pattern></defs>
+ <rect width="900" height="1160" fill="url(#bg)"/><rect width="900" height="1160" fill="url(#grid)"/><circle cx="490" cy="480" r="470" fill="url(#flare)"/>
+ <g transform="translate(0 30)"><g fill="none" stroke="#a8fed1" opacity=".27"><circle cx="449" cy="599" r="292" stroke-width="2"/><circle cx="449" cy="599" r="224" stroke-width="2"/><circle cx="449" cy="599" r="146" stroke-width="2"/></g><path d="M180 603h122l28-130 40 260 46-211 42 88 33-25 36-108 45 243 38-116h105" fill="none" stroke="#adffd9" stroke-width="12" stroke-linejoin="round"/><g fill="#cdffe6"><circle cx="330" cy="473" r="13"/><circle cx="572" cy="720" r="14"/></g></g><path d="M85 87h70m-70 0v70M745 1000h70m0-70v70" stroke="#47d2ab" stroke-width="4" fill="none" opacity=".9"/>
+ <rect x="57" y="1024" width="786" height="1" fill="#fff" opacity=".28"/>
+ <text x="66" y="1065" fill="#fafafa" opacity=".52" font-size="24" font-family="Arial,sans-serif" letter-spacing="7">SIDDIQUE  /  RESEARCH</text>
+ </svg>
