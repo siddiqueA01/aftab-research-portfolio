@@ -33,7 +33,7 @@ assert len(biblio.get('papers', [])) == 40, 'Publication inventory should be rev
 assert len(biblio.get('chapters', [])) == 12
 assert len(biblio.get('abstracts', [])) == 63
 assert len(career.get('media', [])) >= 22
-for name in ['index.html', 'styles.css', 'data.js', 'app.js', 'bibliography.js', 'career-data.js', 'career.js']:
+for name in ['index.html', 'styles.css', 'data.js', 'app.js', 'bibliography.js', 'career-data.js', 'career.js', 'original.css', 'original.js']:
     shutil.copy2(ROOT / name, SITE / name)
 
 # GitHub Pages project sites live under /repository/, so social preview images
@@ -51,6 +51,9 @@ if canonical and canonical.startswith('https://'):
     html = html.replace('content="assets/portrait-new.jpg"', f'content="{escape(canonical + "/assets/portrait-new.jpg", quote=True)}"')
     html = html.replace('</head>', f'  <link rel="canonical" href="{escape(canonical + "/", quote=True)}">\n  <meta property="og:url" content="{escape(canonical + "/", quote=True)}">\n</head>')
     target.write_text(html, encoding='utf-8')
+
+for name in ('bibliography.csv', 'SOURCES_AND_REVIEW.md'):
+    shutil.copy2(ROOT / name, SITE / name)
 
 for folder in ('assets', 'generated'):
     shutil.copytree(ROOT / folder, SITE / folder, dirs_exist_ok=True)
