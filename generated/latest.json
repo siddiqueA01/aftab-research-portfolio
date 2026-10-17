@@ -1,9 +1,19 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-10-17T09:31:42+00:00",
   "sources": {
-    "news": "awaiting first scheduled run",
-    "papers": "awaiting first scheduled run"
+    "news": "OK, 0 recent matches, 0 retained",
+    "papers": "OK, ORCID-filtered OpenAlex; 1 retained"
   },
   "news": [],
-  "papers": []
+  "papers": [
+    {
+      "title": "Multi-frequency bioelectrical impedance and machine learning for non-invasive detection of Caseous Lymphadenitis in goats: a one health precision surveillance approach",
+      "year": 2026,
+      "date": "2026-09-08",
+      "venue": "Smart Agricultural Technology",
+      "url": "https://doi.org/10.1016/j.atech.2026.102548",
+      "doi": "https://doi.org/10.1016/j.atech.2026.102548",
+      "openalex_id": "https://openalex.org/W7211976751"
+    }
+  ]
 }
