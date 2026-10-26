@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Aftab FacultySearch OS — a private-in-browser academic job search dashboard for tenure-track faculty opportunities.">
+  <title>Aftab FacultySearch OS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">
+      <span class="brand-mark">AS</span>
+      <span><strong>Aftab FacultySearch OS</strong><small>ACADEMIC CAREER INTELLIGENCE</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="privacy-pill">Local browser storage</span>
+      <a class="ghost-link" href="../">← Portfolio</a>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" aria-label="FacultySearch navigation">
+      <nav>
+        <button class="nav-item active" data-view="dashboard">Dashboard</button>
+        <button class="nav-item" data-view="analyze">Analyze a job</button>
+        <button class="nav-item" data-view="pipeline">Application pipeline</button>
+        <button class="nav-item" data-view="interview">Interview lab</button>
+        <button class="nav-item" data-view="profile">Career profile</button>
+      </nav>
+      <div class="side-note">
+        <strong>Rule</strong>
+        <p>Never invent experience. Treat the score as a screening aid, then verify every requirement in the official posting.</p>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <section class="view active" id="view-dashboard">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">YOUR ACADEMIC SEARCH COMMAND CENTER</p>
+            <h1>Find the right faculty role.<br><em>Then build the case.</em></h1>
+          </div>
+          <button class="primary" data-jump="analyze">Analyze a new position</button>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card"><span>Target threshold</span><strong>90+</strong><small>High-fit tenure-track roles</small></article>
+          <article class="metric-card"><span>Applications tracked</span><strong id="metric-total">0</strong><small>Saved in this browser</small></article>
+          <article class="metric-card"><span>Priority applications</span><strong id="metric-priority">0</strong><small>Score ≥ 95</small></article>
+          <article class="metric-card"><span>Interview stage</span><strong id="metric-interviews">0</strong><small>Phone, Zoom, or campus</small></article>
+        </div>
+
+        <div class="two-col">
+          <section class="panel">
+            <div class="panel-head">
+              <div><p class="eyebrow">TARGET ROLES</p><h2>Where your profile is strongest</h2></div>
+            </div>
+            <div class="role-list">
+              <div><b>Precision livestock / Animal Science</b><span>AI · biosensing · RFID · BIA · animal health</span></div>
+              <div><b>AI for Agriculture / Agricultural Data Science</b><span>ML · computer vision · predictive analytics · GIS</span></div>
+              <div><b>Food Science / Food Safety</b><span>Imaging · predictive modeling · poultry · quality systems</span></div>
+              <div><b>One Health / Digital Agriculture</b><span>Multimodal sensing · surveillance · environmental integration</span></div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div><p class="eyebrow">NEXT ACTIONS</p><h2>Current search discipline</h2></div>
+            </div>
+            <ol class="action-list">
+              <li><span>01</span><p><b>Verify the official posting.</b><br>Confirm deadline, tenure status, salary, sponsorship, and required degree.</p></li>
+              <li><span>02</span><p><b>Score before tailoring.</b><br>Spend serious application time only when the role clears your threshold or has exceptional strategic value.</p></li>
+              <li><span>03</span><p><b>Lead with independence.</b><br>Frame the research program around your own precision animal-health and food-systems agenda.</p></li>
+            </ol>
+          </section>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div><p class="eyebrow">RECENT PIPELINE</p><h2>Your saved opportunities</h2></div>
+            <button class="secondary" data-jump="pipeline">Open full pipeline</button>
+          </div>
+          <div id="dashboard-jobs" class="job-list empty-state">No positions saved yet. Analyze a job to start your pipeline.</div>
+        </section>
+      </section>
+
+      <section class="view" id="view-analyze">
+        <div class="page-head compact">
+          <div><p class="eyebrow">PROFILE-BASED SCREENING</p><h1>Analyze a faculty position.</h1></div>
+        </div>
+
+        <div class="analyzer-grid">
+          <form id="job-form" class="panel form-panel">
+            <div class="field-row">
+              <label>University / institution<input id="job-university" type="text" placeholder="e.g., University of Maryland"></label>
+              <label>Position title<input id="job-title" type="text" placeholder="Assistant Professor — AI for Agriculture"></label>
+            </div>
+            <div class="field-row">
+              <label>Institution type
+                <select id="job-institution-type">
+                  <option value="public1862">Public · 1862 land-grant</option>
+                  <option value="public1890">Public · 1890 land-grant</option>
+                  <option value="public">Public · non-land-grant</option>
+                  <option value="private">Private</option>
+                  <option value="other">Other / unknown</option>
+                </select>
+              </label>
+              <label>Sponsorship
+                <select id="job-sponsorship">
+                  <option value="unknown">Unknown / not stated</option>
+                  <option value="yes">Available / acceptable</option>
+                  <option value="no">No employer sponsorship</option>
+                </select>
+              </label>
+            </div>
+            <div class="field-row">
+              <label>Review / deadline<input id="job-deadline" type="date"></label>
+              <label>Official job URL<input id="job-url" type="url" placeholder="https://..."></label>
+            </div>
+            <label>Job description<textarea id="job-description" rows="15" placeholder="Paste the complete official job description here. The analyzer works best with duties, required qualifications, preferred qualifications, teaching expectations, and research/Extension percentages."></textarea></label>
+            <div class="form-actions">
+              <button type="submit" class="primary">Calculate fit</button>
+              <button type="button" class="secondary" id="load-sample">Load example</button>
+              <button type="reset" class="text-button">Clear</button>
+            </div>
+          </form>
+
+          <aside class="panel score-panel" id="score-panel">
+            <p class="eyebrow">FIT RESULT</p>
+            <div class="score-ring"><strong id="fit-score">—</strong><span>/100</span></div>
+            <h2 id="fit-label">Paste a job to begin.</h2>
+            <p id="fit-summary">This is a screening score, not a hiring probability.</p>
+            <div id="score-breakdown" class="breakdown"></div>
+            <div id="gap-list" class="gaps"></div>
+            <div class="stack-actions">
+              <button class="primary" id="save-job" disabled>Save to pipeline</button>
+              <button class="secondary" id="copy-application-prompt" disabled>Copy application prompt</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-pipeline">
+        <div class="page-head compact">
+          <div><p class="eyebrow">APPLICATION TRACKER</p><h1>Protect your attention.</h1><p>Track only the positions worth pursuing. Data remains in this browser until you export it.</p></div>
+          <div class="head-actions">
+            <button class="secondary" id="export-json">Export JSON</button>
+            <button class="secondary" id="export-csv">Export CSV</button>
+            <label class="secondary file-button">Import JSON<input id="import-json" type="file" accept="application/json" hidden></label>
+          </div>
+        </div>
+
+        <div class="pipeline-controls panel">
+          <label>Stage<select id="filter-stage"><option value="all">All stages</option><option>Considering</option><option>Preparing</option><option>Applied</option><option>Interview</option><option>Campus interview</option><option>Offer</option><option>Closed</option></select></label>
+          <label>Minimum score<select id="filter-score"><option value="0">All scores</option><option value="90">90+</option><option value="95">95+</option></select></label>
+          <label>Search<input id="filter-query" type="search" placeholder="University or role"></label>
+        </div>
+
+        <div id="pipeline-list" class="job-list empty-state">Your application pipeline is empty.</div>
+      </section>
+
+      <section class="view" id="view-interview">
+        <div class="page-head compact">
+          <div><p class="eyebrow">SEARCH COMMITTEE SIMULATOR</p><h1>Prepare for the room.</h1><p>Generate structured prompts for Zoom interviews, campus visits, research seminars, and negotiation.</p></div>
+        </div>
+
+        <div class="two-col">
+          <section class="panel form-panel">
+            <label>University<input id="interview-university" type="text" placeholder="University"></label>
+            <label>Position<input id="interview-role" type="text" placeholder="Assistant Professor..."></label>
+            <label>Interview stage
+              <select id="interview-stage">
+                <option>30-minute Zoom / phone screen</option>
+                <option>Campus interview</option>
+                <option>Research seminar / job talk</option>
+                <option>Dean / chair interview</option>
+                <option>Startup and salary negotiation</option>
+              </select>
+            </label>
+            <label>Paste key requirements or notes<textarea id="interview-notes" rows="9" placeholder="Research emphasis, teaching load, collaborators, strategic plan, concerns..."></textarea></label>
+            <button class="primary" id="generate-interview-prompt">Generate prep prompt</button>
+          </section>
+
+          <section class="panel">
+            <p class="eyebrow">PREP OUTPUT</p>
+            <textarea id="interview-output" class="prompt-output" rows="24" readonly placeholder="Your personalized interview-prep prompt will appear here."></textarea>
+            <button class="secondary" id="copy-interview-prompt">Copy prompt</button>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" id="view-profile">
+        <div class="page-head compact">
+          <div><p class="eyebrow">MASTER CAREER PROFILE</p><h1>The evidence base.</h1><p>The public version contains only high-level professional information. Edit the source code if you want to expand it.</p></div>
+        </div>
+
+        <div class="profile-grid">
+          <article class="panel"><p class="eyebrow">RESEARCH IDENTITY</p><h2>Precision animal health + food systems</h2><p>Artificial intelligence, machine learning, biosensing, imaging, RF/RFID, bioelectrical impedance, GIS, and explainable predictive analytics applied to livestock health, food safety, and One Health questions.</p></article>
+          <article class="panel"><p class="eyebrow">ACADEMIC FOUNDATION</p><h2>Biotechnology → Animal Science → Food Science</h2><p>B.Tech. Biotechnology · M.S. Animal Science · Ph.D. Food Science (Poultry Science focus), with additional public-health training.</p></article>
+          <article class="panel"><p class="eyebrow">TRANSLATIONAL STRENGTH</p><h2>From measurement to decision support</h2><p>Experience spanning field studies, sensor development, computer vision, machine learning validation, student training, multidisciplinary collaboration, and USDA-NIFA proposal development.</p></article>
+          <article class="panel"><p class="eyebrow">FACULTY POSITIONING</p><h2>Independent research program</h2><p>Present the program as a coherent agenda in precision livestock and One Health rather than as isolated AI projects. Emphasize external validation, field deployment, funding strategy, and graduate training.</p></article>
+        </div>
+
+        <section class="panel">
+          <p class="eyebrow">SCORING MODEL</p>
+          <div class="weight-grid" id="weight-grid"></div>
+          <p class="fine-print">The analyzer uses a transparent heuristic. It is designed for triage and application strategy, not automated employment decision-making.</p>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>© 2026 Aftab Siddique, Ph.D. · FacultySearch OS</span>
+    <span>Browser-local tracker · No automatic applications · Verify official postings</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
