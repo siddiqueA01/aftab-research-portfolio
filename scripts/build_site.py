@@ -55,7 +55,7 @@ if canonical and canonical.startswith('https://'):
 for name in ('bibliography.csv', 'SOURCES_AND_REVIEW.md'):
     shutil.copy2(ROOT / name, SITE / name)
 
-for folder in ('assets', 'generated'):
+for folder in ('assets', 'generated', 'facultysearch'):
     shutil.copytree(ROOT / folder, SITE / folder, dirs_exist_ok=True)
 (SITE / '.nojekyll').touch()
 print('Public website staged in', SITE)
