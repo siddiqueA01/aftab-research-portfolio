@@ -1,11 +1,56 @@
 {
-  "updated_at": "2026-10-26T22:58:39+00:00",
+  "updated_at": "2026-10-27T14:41:18+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
-    "papers": "OK, ORCID-filtered OpenAlex; 1 retained"
+    "papers": "OK, ORCID-filtered OpenAlex; 65 retained"
   },
   "news": [],
   "papers": [
+    {
+      "title": "PS11-3. A Digital Twin Framework For High-risk FAMACHA Prediction in Goats Using Bioelectrical Impedance Analysis and Grouped Machine Learning.",
+      "year": 2026,
+      "date": "2026-09-29",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skag272.342",
+      "doi": "https://doi.org/10.1093/jas/skag272.342",
+      "openalex_id": "https://openalex.org/W7214735532"
+    },
+    {
+      "title": "PS12-7. Nested Cross-validated Hyperparameter Optimization and Decision-boundary Analysis for Image-based Anemia Classification in Dairy Goats.",
+      "year": 2026,
+      "date": "2026-09-29",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skag272.345",
+      "doi": "https://doi.org/10.1093/jas/skag272.345",
+      "openalex_id": "https://openalex.org/W7214736824"
+    },
+    {
+      "title": "PS4-18. Proof-of-concept Evaluation of Multi-frequency Bioelectrical Impedance Analysis for Non-invasive Detection of Caseous Lymphadenitis in Meat Goats.",
+      "year": 2026,
+      "date": "2026-09-29",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skag272.409",
+      "doi": "https://doi.org/10.1093/jas/skag272.409",
+      "openalex_id": "https://openalex.org/W7214770406"
+    },
+    {
+      "title": "PS10-27. Integrating Multi-Frequency Bioelectrical Impedance and Machine Learning for Pregnancy Detection in Sheep.",
+      "year": 2026,
+      "date": "2026-09-29",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skag272.651",
+      "doi": "https://doi.org/10.1093/jas/skag272.651",
+      "openalex_id": "https://openalex.org/W7214775005"
+    },
+    {
+      "title": "PS12-6. Hematological and Rheological Determinants of Species-specific Blood Dispersion Patterns for Automated Anemia Detection in Livestock.",
+      "year": 2026,
+      "date": "2026-09-29",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skag272.344",
+      "doi": "https://doi.org/10.1093/jas/skag272.344",
+      "openalex_id": "https://openalex.org/W7214784596"
+    },
     {
       "title": "Multi-frequency bioelectrical impedance and machine learning for non-invasive detection of Caseous Lymphadenitis in goats: a one health precision surveillance approach",
       "year": 2026,
@@ -14,6 +59,537 @@
       "url": "https://doi.org/10.1016/j.atech.2026.102548",
       "doi": "https://doi.org/10.1016/j.atech.2026.102548",
       "openalex_id": "https://openalex.org/W7211976751"
+    },
+    {
+      "title": "Digital parasitology for small ruminant nematodes",
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "Trends in Parasitology",
+      "url": "https://doi.org/10.1016/j.pt.2026.09.004",
+      "doi": "https://doi.org/10.1016/j.pt.2026.09.004",
+      "openalex_id": "https://openalex.org/W7214902308"
+    },
+    {
+      "title": "Investigating the Relationship Between Environmental Conditions and Goat Health Using Geospatial Analysis, NDVI and Machine Learning Across Multiple Grazing Environments",
+      "year": 2026,
+      "date": "2026-08-25",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "url": "https://doi.org/10.5281/zenodo.22102184",
+      "doi": "https://doi.org/10.5281/zenodo.22102184",
+      "openalex_id": "https://openalex.org/W7204161476"
+    },
+    {
+      "title": "Blood drop patterns and explainable AI reveal livestock anemia signatures",
+      "year": 2026,
+      "date": "2026-07-23",
+      "venue": "Scientific Reports",
+      "url": "https://doi.org/10.1038/s41598-026-62774-y",
+      "doi": "https://doi.org/10.1038/s41598-026-62774-y",
+      "openalex_id": "https://openalex.org/W7170156151"
+    },
+    {
+      "title": "A Time-Aware Machine Learning Framework for Behavioral Anomaly Monitoring and Short-Horizon Forecasting in Goats Using RFID-Derived Activity Data",
+      "year": 2026,
+      "date": "2026-07-10",
+      "venue": "Agriculture",
+      "url": "https://doi.org/10.3390/agriculture16141499",
+      "doi": "https://doi.org/10.3390/agriculture16141499",
+      "openalex_id": "https://openalex.org/W7167935407"
+    },
+    {
+      "title": "26. Externally validated bioelectrical impedance–based screening model for caseous lymphadenitis in goats.",
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skag190.017",
+      "doi": "https://doi.org/10.1093/jas/skag190.017",
+      "openalex_id": "https://openalex.org/W7167919917"
+    },
+    {
+      "title": "Computational modeling in food preservation, integration of Internet of Things (IoT), and big data analytics",
+      "year": 2026,
+      "date": "2026-01-01",
+      "venue": "Elsevier eBooks",
+      "url": "https://doi.org/10.1016/b978-0-443-40397-2.00014-9",
+      "doi": "https://doi.org/10.1016/b978-0-443-40397-2.00014-9",
+      "openalex_id": "https://openalex.org/W7165144766"
+    },
+    {
+      "title": "Contributors",
+      "year": 2026,
+      "date": "2026-01-01",
+      "venue": "Elsevier eBooks",
+      "url": "https://doi.org/10.1016/b978-0-443-40397-2.00406-8",
+      "doi": "https://doi.org/10.1016/b978-0-443-40397-2.00406-8",
+      "openalex_id": "https://openalex.org/W7165185610"
+    },
+    {
+      "title": "Use of Bioelectrical Impedance Analysis to Measure the Impact of Parasitic Infection on Goat Sperm Quality",
+      "year": 2025,
+      "date": "2025-12-17",
+      "venue": "Animals",
+      "url": "https://doi.org/10.3390/ani15243624",
+      "doi": "https://doi.org/10.3390/ani15243624",
+      "openalex_id": "https://openalex.org/W4417422947"
+    },
+    {
+      "title": "Radiofrequency Wave Sensing for Rapid Animal Health Monitoring: A Proof-of-Concept Study",
+      "year": 2025,
+      "date": "2025-11-18",
+      "venue": "Veterinary Sciences",
+      "url": "https://doi.org/10.3390/vetsci12111096",
+      "doi": "https://doi.org/10.3390/vetsci12111096",
+      "openalex_id": "https://openalex.org/W4416336977"
+    },
+    {
+      "title": "PSIX-13 Enhancing livestock health monitoring: AI driven approaches for anemia detection in small ruminants.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.738",
+      "doi": "https://doi.org/10.1093/jas/skaf300.738",
+      "openalex_id": "https://openalex.org/W4414830765"
+    },
+    {
+      "title": "186 Impact of Sericea lespedeza extract on the quality of cooled and cryopreserved bull spermatozoa.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.072",
+      "doi": "https://doi.org/10.1093/jas/skaf300.072",
+      "openalex_id": "https://openalex.org/W4414830780"
+    },
+    {
+      "title": "PSIV-10 Towards automated anemia detection: AI models for accurate FAMACHA classification in outdoor environments.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.497",
+      "doi": "https://doi.org/10.1093/jas/skaf300.497",
+      "openalex_id": "https://openalex.org/W4414830786"
+    },
+    {
+      "title": "PSV-25 Comparative analysis of condensed tannins in Lespedeza cuneata: Structural composition and relative abundance.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.549",
+      "doi": "https://doi.org/10.1093/jas/skaf300.549",
+      "openalex_id": "https://openalex.org/W4414830969"
+    },
+    {
+      "title": "PSIII-2 Machine learning-based image classification of sericea lespedeza: A comparative study.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.435",
+      "doi": "https://doi.org/10.1093/jas/skaf300.435",
+      "openalex_id": "https://openalex.org/W4414831039"
+    },
+    {
+      "title": "PSI-15 Understanding seasonal trends in anemia risk: A multi-scale analysis of fecal egg count, PCV, and FAMACHA scores.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.420",
+      "doi": "https://doi.org/10.1093/jas/skaf300.420",
+      "openalex_id": "https://openalex.org/W4414831052"
+    },
+    {
+      "title": "450 Utilizing bioelectrical impedance analysis to predict the impact of parasitic infestation on testicular morphometrics and sperm quality in male goats.",
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf300.247",
+      "doi": "https://doi.org/10.1093/jas/skaf300.247",
+      "openalex_id": "https://openalex.org/W4414831097"
+    },
+    {
+      "title": "Microstructural Diversity on the Leaf Surface of Peanut Cultivars: Probable Role in Defense",
+      "year": 2025,
+      "date": "2025-09-03",
+      "venue": "Journal of Food and Agriculture Research",
+      "url": "https://doi.org/10.47509/jfar.2025.v05i02.06",
+      "doi": "https://doi.org/10.47509/jfar.2025.v05i02.06",
+      "openalex_id": "https://openalex.org/W7164878977"
+    },
+    {
+      "title": "Engineering a sustainable packaging film using poultry collagen for the food industry",
+      "year": 2025,
+      "date": "2025-09-02",
+      "venue": "Applied Food Research",
+      "url": "https://doi.org/10.1016/j.afres.2025.101314",
+      "doi": "https://doi.org/10.1016/j.afres.2025.101314",
+      "openalex_id": "https://openalex.org/W4413923216"
+    },
+    {
+      "title": "Short term heat stress alters the hematological, immunological, and plasma metabolomic responses of Florida Cracker sheep",
+      "year": 2025,
+      "date": "2025-09-01",
+      "venue": "Frontiers in Animal Science",
+      "url": "https://doi.org/10.3389/fanim.2025.1631531",
+      "doi": "https://doi.org/10.3389/fanim.2025.1631531",
+      "openalex_id": "https://openalex.org/W4413869392"
+    },
+    {
+      "title": "Detection of Visible and Invisible Fecal Contamination on Chicken Carcasses Using Multispectral Fluorescence Imaging and Machine Learning to Mitigate Salmonella Risks",
+      "year": 2025,
+      "date": "2025-09-01",
+      "venue": "Journal of Food Protection",
+      "url": "https://doi.org/10.1016/j.jfp.2025.100613",
+      "doi": "https://doi.org/10.1016/j.jfp.2025.100613",
+      "openalex_id": "https://openalex.org/W4414002039"
+    },
+    {
+      "title": "Relative virulence, host finding ability, and reproductive capacity of entomopathogenic nematodes for control of the goat biting louse Bovicola caprae (Phthiraptera: Trichodectidae)",
+      "year": 2025,
+      "date": "2025-08-06",
+      "venue": "Veterinary Parasitology",
+      "url": "https://doi.org/10.1016/j.vetpar.2025.110572",
+      "doi": "https://doi.org/10.1016/j.vetpar.2025.110572",
+      "openalex_id": "https://openalex.org/W4413001344"
+    },
+    {
+      "title": "Decision support system for Lespedeza cuneata production and quality evaluation: a WebGIS dashboard approach to precision agriculture",
+      "year": 2025,
+      "date": "2025-07-17",
+      "venue": "Frontiers in Plant Science",
+      "url": "https://doi.org/10.3389/fpls.2025.1520163",
+      "doi": "https://doi.org/10.3389/fpls.2025.1520163",
+      "openalex_id": "https://openalex.org/W4412855975"
+    },
+    {
+      "title": "Identification and classification of broiler carcasses exhibiting septicemia-toxemia using spectral imaging systems",
+      "year": 2025,
+      "date": "2025-07-03",
+      "venue": "Food Control",
+      "url": "https://doi.org/10.1016/j.foodcont.2025.111532",
+      "doi": "https://doi.org/10.1016/j.foodcont.2025.111532",
+      "openalex_id": "https://openalex.org/W4411992668"
+    },
+    {
+      "title": "Smart farming with AI: Enhancing anemia detection in small ruminants",
+      "year": 2025,
+      "date": "2025-06-06",
+      "venue": "Veterinary Parasitology",
+      "url": "https://doi.org/10.1016/j.vetpar.2025.110525",
+      "doi": "https://doi.org/10.1016/j.vetpar.2025.110525",
+      "openalex_id": "https://openalex.org/W4411104590"
+    },
+    {
+      "title": "51 Effect of height of blood drops on novel blood biosenor for predicting anemia in goats",
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf170.177",
+      "doi": "https://doi.org/10.1093/jas/skaf170.177",
+      "openalex_id": "https://openalex.org/W4411709347"
+    },
+    {
+      "title": "57 Leveraging bioelectrical impedance analysis and machine learning for early detection of parasitic infections in dairy goats",
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf170.176",
+      "doi": "https://doi.org/10.1093/jas/skaf170.176",
+      "openalex_id": "https://openalex.org/W4411709375"
+    },
+    {
+      "title": "59 Identification of parasitic dairy goats using Bio-Electrical Impedance Analysis",
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf170.179",
+      "doi": "https://doi.org/10.1093/jas/skaf170.179",
+      "openalex_id": "https://openalex.org/W4411734257"
+    },
+    {
+      "title": "8 Automated classification of FAMACHA scores using Machine Learning Models for Anemia detection in small ruminants",
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf170.146",
+      "doi": "https://doi.org/10.1093/jas/skaf170.146",
+      "openalex_id": "https://openalex.org/W4411737281"
+    },
+    {
+      "title": "2 Assessing the effects of parasitism and long-term freezing on quality of goat meat using Bioelectrical Impedance Analysis",
+      "year": 2025,
+      "date": "2025-06-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skaf170.149",
+      "doi": "https://doi.org/10.1093/jas/skaf170.149",
+      "openalex_id": "https://openalex.org/W4411737457"
+    },
+    {
+      "title": "Evaluating the efficacy of bioelectrical impedance analysis using machine learning models for the classification of goats exposed to Haemonchosis",
+      "year": 2025,
+      "date": "2025-05-30",
+      "venue": "Frontiers in Veterinary Science",
+      "url": "https://doi.org/10.3389/fvets.2025.1584828",
+      "doi": "https://doi.org/10.3389/fvets.2025.1584828",
+      "openalex_id": "https://openalex.org/W4410906566"
+    },
+    {
+      "title": "Utilizing spectral imaging systems to identify invisible fecal contamination on chicken WOGs",
+      "year": 2025,
+      "date": "2025-05-21",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1117/12.3053424",
+      "doi": "https://doi.org/10.1117/12.3053424",
+      "openalex_id": "https://openalex.org/W4410556195"
+    },
+    {
+      "title": "Big data analytics in food industry: a state-of-the-art literature review",
+      "year": 2025,
+      "date": "2025-03-21",
+      "venue": "npj Science of Food",
+      "url": "https://doi.org/10.1038/s41538-025-00394-y",
+      "doi": "https://doi.org/10.1038/s41538-025-00394-y",
+      "openalex_id": "https://openalex.org/W4408677857"
+    },
+    {
+      "title": "Rabbit Fever",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch3.4",
+      "doi": "https://doi.org/10.1002/9781119985853.ch3.4",
+      "openalex_id": "https://openalex.org/W4408318805"
+    },
+    {
+      "title": "Foot‐and‐Mouth Disease ( Aphthovirus )",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch7.6",
+      "doi": "https://doi.org/10.1002/9781119985853.ch7.6",
+      "openalex_id": "https://openalex.org/W4408318807"
+    },
+    {
+      "title": "Streptococcus ( Streptococcus equi, Streptococcus suis )",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch4.11",
+      "doi": "https://doi.org/10.1002/9781119985853.ch4.11",
+      "openalex_id": "https://openalex.org/W4408318820"
+    },
+    {
+      "title": "Swine Influenza (H1N1)",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch7.5",
+      "doi": "https://doi.org/10.1002/9781119985853.ch7.5",
+      "openalex_id": "https://openalex.org/W4408318826"
+    },
+    {
+      "title": "Tinea capitis/Tinea corporis ( Microsporum spp .)",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch5.1",
+      "doi": "https://doi.org/10.1002/9781119985853.ch5.1",
+      "openalex_id": "https://openalex.org/W4408318844"
+    },
+    {
+      "title": "New Castle Disease ( Orthoavulavirus avian Orthoavulavirus )",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch7.3",
+      "doi": "https://doi.org/10.1002/9781119985853.ch7.3",
+      "openalex_id": "https://openalex.org/W4408318870"
+    },
+    {
+      "title": "Avian Influenza ( Avian Influenza A )",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch7.4",
+      "doi": "https://doi.org/10.1002/9781119985853.ch7.4",
+      "openalex_id": "https://openalex.org/W4408318872"
+    },
+    {
+      "title": "Powassan Virus ( Flaviviridae )",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch3.21",
+      "doi": "https://doi.org/10.1002/9781119985853.ch3.21",
+      "openalex_id": "https://openalex.org/W4408319042"
+    },
+    {
+      "title": "Roundworms ( Ascaris lumbricoides and Toxocara cati )",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch6.10",
+      "doi": "https://doi.org/10.1002/9781119985853.ch6.10",
+      "openalex_id": "https://openalex.org/W4408319044"
+    },
+    {
+      "title": "Orf (Parapoxvirus Orf Virus)",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch7.7",
+      "doi": "https://doi.org/10.1002/9781119985853.ch7.7",
+      "openalex_id": "https://openalex.org/W4408319417"
+    },
+    {
+      "title": "Colorado Tick Fever",
+      "year": 2025,
+      "date": "2025-02-28",
+      "venue": "OpenAlex indexed work",
+      "url": "https://doi.org/10.1002/9781119985853.ch3.18",
+      "doi": "https://doi.org/10.1002/9781119985853.ch3.18",
+      "openalex_id": "https://openalex.org/W4408319425"
+    },
+    {
+      "title": "Exploring the Role of Duddingtonia flagrans in Integrated Parasite Management: A Systematic Review of Current Research and Applications",
+      "year": 2025,
+      "date": "2025-02-17",
+      "venue": "Preprints.org",
+      "url": "https://doi.org/10.20944/preprints202502.1078.v1",
+      "doi": "https://doi.org/10.20944/preprints202502.1078.v1",
+      "openalex_id": "https://openalex.org/W4407684872"
+    },
+    {
+      "title": "Innovations in animal health: artificial intelligence-enhanced hematocrit analysis for rapid anemia detection in small ruminants",
+      "year": 2024,
+      "date": "2024-11-26",
+      "venue": "Frontiers in Veterinary Science",
+      "url": "https://doi.org/10.3389/fvets.2024.1493403",
+      "doi": "https://doi.org/10.3389/fvets.2024.1493403",
+      "openalex_id": "https://openalex.org/W4404728342"
+    },
+    {
+      "title": "Rapid detection of poultry meat quality using S‐band to KU‐band radio‐frequency waves combined with machine learning—A proof of concept",
+      "year": 2024,
+      "date": "2024-11-26",
+      "venue": "Journal of Food Science",
+      "url": "https://doi.org/10.1111/1750-3841.17549",
+      "doi": "https://doi.org/10.1111/1750-3841.17549",
+      "openalex_id": "https://openalex.org/W4404730764"
+    },
+    {
+      "title": "Evaluating the Efficacy of Bioelectrical Impedance Analysis Using Machine Learning Models for the classification of Parasitized Goats",
+      "year": 2024,
+      "date": "2024-11-25",
+      "venue": "Preprints.org",
+      "url": "https://doi.org/10.20944/preprints202411.1755.v1",
+      "doi": "https://doi.org/10.20944/preprints202411.1755.v1",
+      "openalex_id": "https://openalex.org/W4404685622"
+    },
+    {
+      "title": "PSIII-29 Evaluating the efficacy of bioelectrical impedance analysis using machine learning models for the classification of parasitized goats",
+      "year": 2024,
+      "date": "2024-09-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skae234.518",
+      "doi": "https://doi.org/10.1093/jas/skae234.518",
+      "openalex_id": "https://openalex.org/W4402540839"
+    },
+    {
+      "title": "Effect of Age, Deboning Time of Carcass, and Different Cooking Conditions on the Woody Breast Myopathies in Chicken: A Meta-Analysis",
+      "year": 2024,
+      "date": "2024-08-22",
+      "venue": "Foods",
+      "url": "https://doi.org/10.3390/foods13162632",
+      "doi": "https://doi.org/10.3390/foods13162632",
+      "openalex_id": "https://openalex.org/W4401730189"
+    },
+    {
+      "title": "Estimating Salmonella Typhimurium Growth on Chicken Breast Fillets Under Simulated Less-Than-Truckload Dynamic Temperature Abuse",
+      "year": 2024,
+      "date": "2024-07-31",
+      "venue": "Foodborne Pathogens and Disease",
+      "url": "https://doi.org/10.1089/fpd.2024.0018",
+      "doi": "https://doi.org/10.1089/fpd.2024.0018",
+      "openalex_id": "https://openalex.org/W4401185928"
+    },
+    {
+      "title": "Development of Predictive Classification Models and Extraction of Signature Wavelengths for the Identification of Spoilage in Chicken Breast Fillets During Storage Using Near Infrared Spectroscopy",
+      "year": 2024,
+      "date": "2024-07-13",
+      "venue": "Food and Bioprocess Technology",
+      "url": "https://doi.org/10.1007/s11947-024-03499-6",
+      "doi": "https://doi.org/10.1007/s11947-024-03499-6",
+      "openalex_id": "https://openalex.org/W4400607463"
+    },
+    {
+      "title": "Effect of feeding a blackseed meal-sericea lespedeza leaf meal pellet on gastrointestinal nematode and coccidia infection and animal performance in young goats",
+      "year": 2024,
+      "date": "2024-07-11",
+      "venue": "Veterinary Parasitology",
+      "url": "https://doi.org/10.1016/j.vetpar.2024.110253",
+      "doi": "https://doi.org/10.1016/j.vetpar.2024.110253",
+      "openalex_id": "https://openalex.org/W4400520885"
+    },
+    {
+      "title": "Development of a predictive classification model and extraction of signature wavelengths for the identification of spoilage in chicken breast fillets during storage using Near Infrared Spectroscopy",
+      "year": 2024,
+      "date": "2024-06-10",
+      "venue": "Research Square",
+      "url": "https://doi.org/10.21203/rs.3.rs-4478852/v1",
+      "doi": "https://doi.org/10.21203/rs.3.rs-4478852/v1",
+      "openalex_id": "https://openalex.org/W4399498767"
+    },
+    {
+      "title": "From Plants to Pixels: The Role of Artificial Intelligence in Identifying Sericea Lespedeza in Field-Based Studies",
+      "year": 2024,
+      "date": "2024-05-08",
+      "venue": "Agronomy",
+      "url": "https://doi.org/10.3390/agronomy14050992",
+      "doi": "https://doi.org/10.3390/agronomy14050992",
+      "openalex_id": "https://openalex.org/W4396747835"
+    },
+    {
+      "title": "Development of a Decision Support System for Animal Health Management Using Geo-Information Technology: A Novel Approach to Precision Livestock Management",
+      "year": 2024,
+      "date": "2024-04-28",
+      "venue": "Agriculture",
+      "url": "https://doi.org/10.3390/agriculture14050696",
+      "doi": "https://doi.org/10.3390/agriculture14050696",
+      "openalex_id": "https://openalex.org/W4396584626"
+    },
+    {
+      "title": "Decision Support System for Lespedeza Cuneata Production and Quality Evaluation: A WebGIS Dashboard Approach to Precision Agriculture",
+      "year": 2024,
+      "date": "2024-03-08",
+      "venue": "Preprints.org",
+      "url": "https://doi.org/10.20944/preprints202403.0512.v1",
+      "doi": "https://doi.org/10.20944/preprints202403.0512.v1",
+      "openalex_id": "https://openalex.org/W4392651438"
+    },
+    {
+      "title": "75 AI-Enhanced Hematocrit Analysis: Revolutionizing rapid anemia detection in small ruminants",
+      "year": 2024,
+      "date": "2024-03-01",
+      "venue": "Journal of Animal Science",
+      "url": "https://doi.org/10.1093/jas/skae019.025",
+      "doi": "https://doi.org/10.1093/jas/skae019.025",
+      "openalex_id": "https://openalex.org/W4392351007"
+    },
+    {
+      "title": "Decision Support System for Lespedeza Cuneata Production and Quality Evaluation: A Webgis Dashboard Approach to Precision Agriculture",
+      "year": 2024,
+      "date": "2024-01-01",
+      "venue": "SSRN Electronic Journal",
+      "url": "https://doi.org/10.2139/ssrn.4844388",
+      "doi": "https://doi.org/10.2139/ssrn.4844388",
+      "openalex_id": "https://openalex.org/W4399097936"
+    },
+    {
+      "title": "Phenotyping Alfalfa (Medicago sativa L.) Root Structure Architecture via Integrating Confident Machine Learning with ResNet-18",
+      "year": 2024,
+      "date": "2024-01-01",
+      "venue": "Plant Phenomics",
+      "url": "https://doi.org/10.34133/plantphenomics.0251",
+      "doi": "https://doi.org/10.34133/plantphenomics.0251",
+      "openalex_id": "https://openalex.org/W4401718082"
     }
   ]
 }
