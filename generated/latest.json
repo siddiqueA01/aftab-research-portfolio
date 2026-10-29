@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T15:14:19+00:00",
+  "updated_at": "2026-10-29T15:18:40+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
     "papers": "OK, ORCID-filtered OpenAlex; 66 retained"
@@ -343,7 +343,7 @@
       "title": "Utilizing spectral imaging systems to identify invisible fecal contamination on chicken WOGs",
       "year": 2025,
       "date": "2025-05-21",
-      "venue": "Sensing for Agriculture and Food Quality and Safety",
+      "venue": "SPIE Conference on Sensing for Agriculture and Food Quality and Safety",
       "url": "https://doi.org/10.1117/12.3053424",
       "doi": "https://doi.org/10.1117/12.3053424",
       "openalex_id": "https://openalex.org/W4410556195"
