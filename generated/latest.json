@@ -1,11 +1,20 @@
 {
-  "updated_at": "2026-11-03T16:22:13+00:00",
+  "updated_at": "2026-11-04T16:31:10+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
-    "papers": "OK, ORCID-filtered OpenAlex; 66 retained"
+    "papers": "OK, ORCID-filtered OpenAlex; 67 retained"
   },
   "news": [],
   "papers": [
+    {
+      "title": "Assessing the Incremental Value of Environment-Aware Bioelectrical Impedance Sensing for Machine Learning-Based Anemia Risk Monitoring in Goats",
+      "year": 2026,
+      "date": "2026-10-31",
+      "venue": "Animals",
+      "url": "https://doi.org/10.3390/ani16213441",
+      "doi": "https://doi.org/10.3390/ani16213441",
+      "openalex_id": "https://openalex.org/W7225154154"
+    },
     {
       "title": "Interpretable Machine Learning Prediction of Bemisia tabaci Mortality Across Squash Cultivars and IPM Treatments",
       "year": 2026,
@@ -361,7 +370,7 @@
       "title": "Rabbit Fever",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch3.4",
       "doi": "https://doi.org/10.1002/9781119985853.ch3.4",
       "openalex_id": "https://openalex.org/W4408318805"
@@ -370,7 +379,7 @@
       "title": "Foot‐and‐Mouth Disease ( Aphthovirus )",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch7.6",
       "doi": "https://doi.org/10.1002/9781119985853.ch7.6",
       "openalex_id": "https://openalex.org/W4408318807"
@@ -379,7 +388,7 @@
       "title": "Streptococcus ( Streptococcus equi, Streptococcus suis )",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch4.11",
       "doi": "https://doi.org/10.1002/9781119985853.ch4.11",
       "openalex_id": "https://openalex.org/W4408318820"
@@ -388,7 +397,7 @@
       "title": "Swine Influenza (H1N1)",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch7.5",
       "doi": "https://doi.org/10.1002/9781119985853.ch7.5",
       "openalex_id": "https://openalex.org/W4408318826"
@@ -397,7 +406,7 @@
       "title": "Tinea capitis/Tinea corporis ( Microsporum spp .)",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch5.1",
       "doi": "https://doi.org/10.1002/9781119985853.ch5.1",
       "openalex_id": "https://openalex.org/W4408318844"
@@ -406,7 +415,7 @@
       "title": "New Castle Disease ( Orthoavulavirus avian Orthoavulavirus )",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch7.3",
       "doi": "https://doi.org/10.1002/9781119985853.ch7.3",
       "openalex_id": "https://openalex.org/W4408318870"
@@ -415,7 +424,7 @@
       "title": "Avian Influenza ( Avian Influenza A )",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch7.4",
       "doi": "https://doi.org/10.1002/9781119985853.ch7.4",
       "openalex_id": "https://openalex.org/W4408318872"
@@ -424,7 +433,7 @@
       "title": "Powassan Virus ( Flaviviridae )",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch3.21",
       "doi": "https://doi.org/10.1002/9781119985853.ch3.21",
       "openalex_id": "https://openalex.org/W4408319042"
@@ -433,7 +442,7 @@
       "title": "Roundworms ( Ascaris lumbricoides and Toxocara cati )",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch6.10",
       "doi": "https://doi.org/10.1002/9781119985853.ch6.10",
       "openalex_id": "https://openalex.org/W4408319044"
@@ -442,7 +451,7 @@
       "title": "Orf (Parapoxvirus Orf Virus)",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch7.7",
       "doi": "https://doi.org/10.1002/9781119985853.ch7.7",
       "openalex_id": "https://openalex.org/W4408319417"
@@ -451,7 +460,7 @@
       "title": "Colorado Tick Fever",
       "year": 2025,
       "date": "2025-02-28",
-      "venue": "OpenAlex indexed work",
+      "venue": "Wiley eBooks",
       "url": "https://doi.org/10.1002/9781119985853.ch3.18",
       "doi": "https://doi.org/10.1002/9781119985853.ch3.18",
       "openalex_id": "https://openalex.org/W4408319425"
