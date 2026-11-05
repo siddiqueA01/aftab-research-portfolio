@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T16:31:10+00:00",
+  "updated_at": "2026-11-05T16:34:19+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
     "papers": "OK, ORCID-filtered OpenAlex; 67 retained"
@@ -23,6 +23,15 @@
       "url": "https://doi.org/10.3390/insects17111104",
       "doi": "https://doi.org/10.3390/insects17111104",
       "openalex_id": "https://openalex.org/W7223649976"
+    },
+    {
+      "title": "Digital parasitology for small ruminant nematodes",
+      "year": 2026,
+      "date": "2026-09-30",
+      "venue": "Trends in Parasitology",
+      "url": "https://doi.org/10.1016/j.pt.2026.09.004",
+      "doi": "https://doi.org/10.1016/j.pt.2026.09.004",
+      "openalex_id": "https://openalex.org/W7214902308"
     },
     {
       "title": "PS11-3. A Digital Twin Framework For High-risk FAMACHA Prediction in Goats Using Bioelectrical Impedance Analysis and Grouped Machine Learning.",
@@ -77,15 +86,6 @@
       "url": "https://doi.org/10.1016/j.atech.2026.102548",
       "doi": "https://doi.org/10.1016/j.atech.2026.102548",
       "openalex_id": "https://openalex.org/W7211976751"
-    },
-    {
-      "title": "Digital parasitology for small ruminant nematodes",
-      "year": 2026,
-      "date": "2026-09-01",
-      "venue": "Trends in Parasitology",
-      "url": "https://doi.org/10.1016/j.pt.2026.09.004",
-      "doi": "https://doi.org/10.1016/j.pt.2026.09.004",
-      "openalex_id": "https://openalex.org/W7214902308"
     },
     {
       "title": "Investigating the Relationship Between Environmental Conditions and Goat Health Using Geospatial Analysis, NDVI and Machine Learning Across Multiple Grazing Environments",
