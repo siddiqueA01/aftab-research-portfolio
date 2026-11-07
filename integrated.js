@@ -164,8 +164,19 @@ plain('#teaching-list',C.teaching,x=>x.when,x=>x.course,x=>x.institution+' · '+
   toggle.setAttribute('aria-label','Turn off interactive research field lens');
   Object.assign(toggle.style,{position:'fixed',bottom:'16px',left:'16px',zIndex:'1000',background:'rgba(15,39,55,.93)',color:'#d5f2f3',border:'1px solid rgba(75,198,208,.55)',borderRadius:'4px',padding:'8px 12px',font:'11px Arial,sans-serif',letterSpacing:'.05em',cursor:'pointer'});
   document.body.appendChild(toggle);
+  const reticle=document.createElement('div');
+  reticle.id='research-field-reticle';
+  reticle.setAttribute('aria-hidden','true');
+  Object.assign(reticle.style,{
+    position:'fixed',top:'0',left:'0',width:'144px',height:'144px',borderRadius:'50%',
+    border:'1px solid rgba(95,223,229,.48)',pointerEvents:'none',zIndex:'998',
+    boxShadow:'0 0 0 6px rgba(74,170,186,.055), inset 0 0 18px rgba(53,170,185,.11)',
+    background:'radial-gradient(circle,rgba(64,160,177,.025) 0,transparent 70%)',
+    transform:'translate3d(calc(50vw - 72px),calc(42vh - 72px),0)',willChange:'transform'
+  });
+  document.body.appendChild(reticle);
   let on=true,w=0,h=0,dpr=1,x=0,y=0,mouseX=0,mouseY=0,mouseAt=-Infinity,mode='systems',frameAt=0;
-  toggle.addEventListener('click',()=>{on=!on;canvas.style.display=on?'block':'none';toggle.textContent=on?'◇ Field lens · on':'◇ Field lens · off';toggle.setAttribute('aria-label',on?'Turn off interactive research field lens':'Turn on interactive research field lens')});
+  toggle.addEventListener('click',()=>{on=!on;canvas.style.display=on?'block':'none';reticle.style.display=on?'block':'none';toggle.textContent=on?'◇ Field lens · on':'◇ Field lens · off';toggle.setAttribute('aria-label',on?'Turn off interactive research field lens':'Turn on interactive research field lens')});
   function resize(){
     w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,2);
     canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));
@@ -250,9 +261,9 @@ plain('#teaching-list',C.teaching,x=>x.when,x=>x.course,x=>x.institution+' · '+
       for(let i=0;i<8;i++){const a=i*Math.PI/4+t*.12;ctx.fillStyle=cyan;ctx.fillRect(Math.cos(a)*r*.6-1,Math.sin(a)*r*.5-1,2,2)}
     }
   }
-  function paint(time){
+  function paint(time,force){
     requestAnimationFrame(paint);
-    if(!on||document.hidden||time-frameAt<32)return;
+    if(!on||(!force&&document.hidden)||(!force&&time-frameAt<32))return;
     frameAt=time;
     const t=time*.001,manual=time-mouseAt<4300;
     const available=targets().filter(visible);
@@ -263,6 +274,7 @@ plain('#teaching-list',C.teaching,x=>x.when,x=>x.course,x=>x.institution+' · '+
     const autoY=rect?clamp(rect.top+Math.min(rect.height*.5,165),90,h-90):h*(.45+.18*Math.cos(t*.28));
     const targetX=manual?mouseX:autoX,targetY=manual?mouseY:autoY;
     x+=(targetX-x)*(manual?.13:.025);y+=(targetY-y)*(manual?.13:.025);
+    reticle.style.transform='translate3d('+(x-72)+'px,'+(y-72)+'px,0)';
     const r=manual?84:68;ctx.clearRect(0,0,w,h);
     ctx.save();ctx.translate(x,y);
     const background=ctx.createRadialGradient(0,0,8,0,0,r);
@@ -283,6 +295,6 @@ plain('#teaching-list',C.teaching,x=>x.when,x=>x.course,x=>x.institution+' · '+
     ctx.font='8px Arial,sans-serif';ctx.fillStyle='rgba(137,232,229,.75)';ctx.fillText('GENERATIVE FIELD / NOT A MEASUREMENT',0,r*.75+11);
     ctx.restore();
   }
-  requestAnimationFrame(paint);
+  paint(performance.now()+100,true);
 })();
 
