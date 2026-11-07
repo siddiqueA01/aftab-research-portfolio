@@ -56,7 +56,7 @@ if canonical and canonical.startswith('https://'):
 # Generate the downloadable CSV from the exact same maintained bibliography source.
 fields = ['kind', 'year', 'title', 'authors', 'venue', 'citation', 'status', 'href', 'direct', 'verification', 'firstAuthor']
 with (ROOT / 'bibliography.csv').open('w', encoding='utf-8-sig', newline='') as csv_file:
-    writer = csv.DictWriter(csv_file, fieldnames=fields, lineterminator='\\r\\n', extrasaction='ignore')
+    writer = csv.DictWriter(csv_file, fieldnames=fields, lineterminator='\r\n', extrasaction='ignore')
     writer.writeheader()
     for key in ('papers', 'chapters', 'abstracts'):
         for entry in biblio[key]:
