@@ -1,6 +1,36 @@
 {
   "papers": [
     {
+      "id": "paper-042",
+      "kind": "paper",
+      "year": 2026,
+      "published": "2026-10-31",
+      "title": "Assessing the Incremental Value of Environment-Aware Bioelectrical Impedance Sensing for Machine Learning-Based Anemia Risk Monitoring in Goats",
+      "authors": "Kota, R., Neelagiri, S., Isai, G. K., Brown, D., Banik, J., Villa Rubio, A., Batchu, P., Shapiro-Ilan, D., Pisani, C., Siddique, A., Mahapatra, A. K., Panda, S. S., & Terrill, T. H.",
+      "venue": "Animals, 16(21), 3441. https://doi.org/10.3390/ani16213441",
+      "href": "https://doi.org/10.3390/ani16213441",
+      "direct": true,
+      "status": "Published journal article",
+      "verification": "Publisher record verified 2026-11-07",
+      "firstAuthor": false,
+      "citation": "Kota, R., Neelagiri, S., Isai, G. K., Brown, D., Banik, J., Villa Rubio, A., Batchu, P., Shapiro-Ilan, D., Pisani, C., Siddique, A., Mahapatra, A. K., Panda, S. S., & Terrill, T. H. (2026). Assessing the Incremental Value of Environment-Aware Bioelectrical Impedance Sensing for Machine Learning-Based Anemia Risk Monitoring in Goats. Animals, 16(21), 3441. https://doi.org/10.3390/ani16213441"
+    },
+    {
+      "id": "paper-041",
+      "kind": "paper",
+      "year": 2026,
+      "published": "2026-10-26",
+      "title": "Interpretable Machine Learning Prediction of Bemisia tabaci Mortality Across Squash Cultivars and IPM Treatments",
+      "authors": "Warsi, S., Siddique, A., & Mbata, G. N.",
+      "venue": "Insects, 17(11), 1104. https://doi.org/10.3390/insects17111104",
+      "href": "https://doi.org/10.3390/insects17111104",
+      "direct": true,
+      "status": "Published journal article",
+      "verification": "Publisher record verified 2026-11-07",
+      "firstAuthor": false,
+      "citation": "Warsi, S., Siddique, A., & Mbata, G. N. (2026). Interpretable Machine Learning Prediction of Bemisia tabaci Mortality Across Squash Cultivars and IPM Treatments. Insects, 17(11), 1104. https://doi.org/10.3390/insects17111104"
+    },
+    {
       "id": "paper-040",
       "kind": "paper",
       "year": 2026,
@@ -1741,6 +1771,6 @@
       "historicalOnly": true
     }
   ],
-  "updated": "2026-10-13",
-  "sourceNote": "The September 2026 comprehensive CV and reconciled 2012–2026 conference inventory. Historical conference entries are identified in each record."
+  "updated": "2026-11-07",
+  "sourceNote": "The September 2026 comprehensive CV and reconciled 2012–2026 conference inventory. Historical conference entries are identified in each record. Two 2026 journal articles added from publisher journal records on 2026-11-07."
 }
