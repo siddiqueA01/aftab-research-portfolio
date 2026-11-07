@@ -5,6 +5,7 @@ Career and publication data are maintained in their JSON files, so an editor
 needs to update only one copy; generated JavaScript is created on each build.
 """
 import json
+import csv
 import os
 import shutil
 from html import escape
@@ -29,7 +30,7 @@ def compile_json(source, dest, variable):
 
 career = compile_json('career.json', 'career-data.js', 'CAREER')
 biblio = compile_json('bibliography.json', 'bibliography.js', 'BIBLIOGRAPHY')
-assert len(biblio.get('papers', [])) == 40, 'Publication inventory should be reviewed after additions'
+assert len(biblio.get('papers', [])) == 42, 'Publication inventory should be reviewed after additions'
 assert len(biblio.get('chapters', [])) == 12
 assert len(biblio.get('abstracts', [])) == 63
 assert len(career.get('media', [])) >= 22
@@ -51,6 +52,15 @@ if canonical and canonical.startswith('https://'):
     html = html.replace('content="assets/portrait-new.jpg"', f'content="{escape(canonical + "/assets/portrait-new.jpg", quote=True)}"')
     html = html.replace('</head>', f'  <link rel="canonical" href="{escape(canonical + "/", quote=True)}">\n  <meta property="og:url" content="{escape(canonical + "/", quote=True)}">\n</head>')
     target.write_text(html, encoding='utf-8')
+
+# Generate the downloadable CSV from the exact same maintained bibliography source.
+fields = ['kind', 'year', 'title', 'authors', 'venue', 'citation', 'status', 'href', 'direct', 'verification', 'firstAuthor']
+with (ROOT / 'bibliography.csv').open('w', encoding='utf-8-sig', newline='') as csv_file:
+    writer = csv.DictWriter(csv_file, fieldnames=fields, lineterminator='\\r\\n', extrasaction='ignore')
+    writer.writeheader()
+    for key in ('papers', 'chapters', 'abstracts'):
+        for entry in biblio[key]:
+            writer.writerow({field: entry.get(field, '') for field in fields})
 
 for name in ('bibliography.csv', 'SOURCES_AND_REVIEW.md'):
     shutil.copy2(ROOT / name, SITE / name)
