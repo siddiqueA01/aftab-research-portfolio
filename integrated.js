@@ -77,81 +77,212 @@ plain('#teaching-list',C.teaching,x=>x.when,x=>x.course,x=>x.institution+' · '+
  fetch('https://public-api.wordpress.com/rest/v1.1/sites/biotechcafe.org/posts/?number=3&fields=title,URL,date,excerpt,featured_image',{mode:'cors'}).then(r=>{if(!r.ok)throw Error('feed');return r.json()}).then(data=>{if(Array.isArray(data.posts)&&data.posts.length)render(data.posts)}).catch(()=>{});
 })();
 
-/* Automatic cursor swarm: visual overlay only; never intercepts page clicks. */
+
+/* Front-page publication window. Curated records are visibly separated from newly indexed candidates. */
 (() => {
-  if (window.__aftabCursorSwarmStarted) return;
+  'use strict';
+  const archive = window.BIBLIOGRAPHY;
+  const anchor = document.querySelector('#record');
+  if (!archive || !anchor || document.querySelector('#latest-publications')) return;
+  const escapeHTML = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const doi = x => String(x || '').toLowerCase().replace(/^https?:\/\/(dx\.)?doi\.org\//,'').trim();
+  const cleanURL = x => { try { const u = new URL(x); return (u.protocol === 'https:' && /^(doi\.org|www\.mdpi\.com|mdpi\.com)$/.test(u.hostname)) ? u.href : ''; } catch { return ''; } };
+  const verified = archive.papers.filter(p => p.published && p.direct && cleanURL(p.href))
+    .sort((a,b) => String(b.published).localeCompare(String(a.published))).slice(0,4);
+  const known = new Set(archive.papers.map(p => doi(p.href)));
+  const section = document.createElement('section');
+  section.id = 'latest-publications';
+  section.className = 'publication-window';
+  section.setAttribute('aria-labelledby', 'publication-window-title');
+  const style = document.createElement('style');
+  style.textContent = [
+    '.publication-window{background:#eaf0f5;border-top:1px solid #cbd9e3;border-bottom:1px solid #cbd9e3;padding:66px 0;color:#172d40}',
+    '.publication-window .pub-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:26px}',
+    '.publication-window .pub-kicker{font:700 10px/1.4 Arial,sans-serif;letter-spacing:.2em;color:#315c7e;text-transform:uppercase}',
+    '.publication-window h2{font:500 clamp(32px,4vw,47px)/1.1 Georgia,serif;letter-spacing:-1px;margin-top:10px}',
+    '.publication-window .pub-intro{max-width:390px;font:13px/1.7 Arial,sans-serif;color:#536a7b}',
+    '.publication-window .pub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}',
+    '.publication-window .pub-card{background:#fff;border:1px solid #ced9e2;border-top:3px solid #2c657a;padding:26px;min-width:0;transition:transform .2s ease,border-color .2s ease}',
+    '.publication-window .pub-card:hover{transform:translateY(-3px);border-color:#85b3bf}',
+    '.publication-window .pub-meta{font:700 10px/1.5 Arial,sans-serif;letter-spacing:.1em;color:#417487;text-transform:uppercase}',
+    '.publication-window h3{font:500 19px/1.3 Georgia,serif;margin:13px 0 16px;letter-spacing:-.1px}',
+    '.publication-window a{font:700 11px/1.5 Arial,sans-serif;color:#125a78;text-decoration:underline;text-underline-offset:4px}',
+    '.publication-window .pub-indexed{margin-top:23px;border-top:1px solid #bbccd8;padding-top:15px}',
+    '.publication-window .pub-indexed summary{font:700 12px/1.5 Arial,sans-serif;cursor:pointer}',
+    '.publication-window .pub-indexed ul{list-style:none;padding:0;margin:12px 0;display:grid;gap:10px}',
+    '.publication-window .pub-indexed li{font:12px/1.6 Arial,sans-serif}',
+    '.publication-window .pub-indexed li span{color:#5c7181}',
+    '.publication-window .pub-refresh{font:11px/1.6 Arial,sans-serif;color:#607588;margin:11px 0 0}',
+    '@media(max-width:700px){.publication-window{padding:45px 0}.publication-window .pub-head{display:block}.publication-window .pub-intro{margin-top:15px}.publication-window .pub-grid{grid-template-columns:1fr}.publication-window .pub-card{padding:21px}}',
+    '@media(prefers-reduced-motion:reduce){.publication-window .pub-card{transition:none}.publication-window .pub-card:hover{transform:none}}'
+  ].join('\n');
+  document.head.appendChild(style);
+  const cards = verified.map(p => '<article class="pub-card" data-paper-topic="' +
+      (/Bemisia|insect|whitefly/i.test(p.title) ? 'entomology' : 'bioimpedance') + '"><p class="pub-meta">Publisher verified · ' +
+      escapeHTML(p.published) + ' · ' + escapeHTML(p.venue.split(',')[0]) +
+      '</p><h3>' + escapeHTML(p.title) + '</h3><a href="' + escapeHTML(cleanURL(p.href)) +
+      '" target="_blank" rel="noopener noreferrer">Read publication ↗</a></article>').join('');
+  section.innerHTML = '<div class="wrap"><div class="pub-head"><div><p class="pub-kicker">Research archive / New releases</p>' +
+    '<h2 id="publication-window-title">Recently published.</h2></div><p class="pub-intro">Peer-reviewed journal articles, linked to their publisher records. Automatically indexed candidates appear separately until reviewed.</p></div>' +
+    '<div class="pub-grid">' + cards + '</div><details class="pub-indexed" id="publication-indexed" hidden><summary>Newly indexed research records requiring review <span id="pub-new-count"></span></summary>' +
+    '<ul id="pub-new-list"></ul></details><p class="pub-refresh" id="pub-refresh">Verified journal records. Automatic research feed loads separately.</p></div>';
+  anchor.parentNode.insertBefore(section, anchor);
+  fetch('generated/latest.json', {cache:'no-store'}).then(r=>{if(!r.ok)throw Error('feed unavailable');return r.json()}).then(data=>{
+    const items = (Array.isArray(data.papers) ? data.papers : []).filter(p=>{
+      const url=cleanURL(p.url),title=String(p.title||''),venue=String(p.venue||'');
+      return url && !known.has(doi(url)) && /^\d{4}-\d{2}-\d{2}$/.test(p.date||'') &&
+        Number(p.year)>=2026 && !/^(PS\d|PSI|PSV|^\d+[\s.])/.test(title) &&
+        !/preprint|zenodo|ebook|conference|proceedings|journal of animal science/i.test(venue);
+    }).sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,5);
+    if(items.length){
+      const box=section.querySelector('#publication-indexed');box.hidden=false;
+      section.querySelector('#pub-new-count').textContent='(' + items.length + ')';
+      section.querySelector('#pub-new-list').innerHTML=items.map(p=>'<li><span>'+
+        escapeHTML(p.date)+' · '+escapeHTML(p.venue)+' · Indexed candidate, not yet curated</span><div>'+
+        '<a target="_blank" rel="noopener noreferrer" href="'+escapeHTML(cleanURL(p.url))+'">'+escapeHTML(p.title)+' ↗</a></div></li>').join('');
+    }
+    section.querySelector('#pub-refresh').textContent='Automatic index last checked: ' +
+      (data.updated_at ? new Date(data.updated_at).toLocaleDateString() : 'not available') +
+      '. New records are reviewed before entering the verified bibliography.';
+  }).catch(()=> { section.querySelector('#pub-refresh').textContent='Verified publications available; automatic index temporarily unavailable.'; });
+})();
+
+
+/* Context-aware research field lens, replacing the previous decorative cursor dots. */
+(() => {
+  'use strict';
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
       window.matchMedia('(pointer: coarse)').matches) return;
-
-  const canvas = document.createElement('canvas');
-  canvas.setAttribute('aria-hidden', 'true');
-  Object.assign(canvas.style, {
-    position: 'fixed', inset: '0', width: '100%', height: '100%',
-    pointerEvents: 'none', zIndex: '2147483646'
-  });
+  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
+  if(!ctx)return;
+  canvas.id='research-field-lens';
+  canvas.setAttribute('aria-hidden','true');
+  Object.assign(canvas.style,{position:'fixed',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'999',opacity:'0.94'});
   document.body.appendChild(canvas);
-  const ctx = canvas.getContext('2d');
-  if (!ctx) { canvas.remove(); return; }
-  window.__aftabCursorSwarmStarted = true;
-
-  let width = 0, height = 0, dpr = 1, centerX = 0, centerY = 0;
-  let mouseX = 0, mouseY = 0, lastPointer = -Infinity;
-  const dots = Array.from({length: 26}, (_, i) => ({
-    x: 0, y: 0, vx: 0, vy: 0, phase: i * 2.39996
-  }));
-  const resize = () => {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    if (!centerX && !centerY) {
-      centerX = width * 0.5;
-      centerY = height * 0.5;
-      dots.forEach((p, i) => {
-        p.x = centerX + Math.cos(p.phase) * (12 + Math.sqrt(i) * 7);
-        p.y = centerY + Math.sin(p.phase) * (12 + Math.sqrt(i) * 7);
-      });
-    }
+  const toggle=document.createElement('button');
+  toggle.type='button';toggle.textContent='◇ Field lens · on';
+  toggle.setAttribute('aria-label','Turn off interactive research field lens');
+  Object.assign(toggle.style,{position:'fixed',bottom:'16px',left:'16px',zIndex:'1000',background:'rgba(15,39,55,.93)',color:'#d5f2f3',border:'1px solid rgba(75,198,208,.55)',borderRadius:'4px',padding:'8px 12px',font:'11px Arial,sans-serif',letterSpacing:'.05em',cursor:'pointer'});
+  document.body.appendChild(toggle);
+  let on=true,w=0,h=0,dpr=1,x=0,y=0,mouseX=0,mouseY=0,mouseAt=-Infinity,mode='systems',frameAt=0;
+  toggle.addEventListener('click',()=>{on=!on;canvas.style.display=on?'block':'none';toggle.textContent=on?'◇ Field lens · on':'◇ Field lens · off';toggle.setAttribute('aria-label',on?'Turn off interactive research field lens':'Turn on interactive research field lens')});
+  function resize(){
+    w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,2);
+    canvas.width=Math.max(1,Math.round(w*dpr));canvas.height=Math.max(1,Math.round(h*dpr));
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(!x&&!y){x=w*.5;y=h*.45}
+  }
+  resize();addEventListener('resize',resize,{passive:true});
+  const zones=[
+    ['#work .proof article:nth-child(1)','impedance','BIOELECTRICAL / PHASE SPACE'],
+    ['#work .proof article:nth-child(2)','blood','HEMATOLOGY / IMAGE MORPHOLOGY'],
+    ['#work .proof article:nth-child(3)','behavior','BEHAVIOR / TEMPORAL SIGNAL'],
+    ['#latest-publications .pub-card[data-paper-topic="entomology"]','entomology','ENTOMOLOGY / WING MORPHOMETRY'],
+    ['#latest-publications .pub-card[data-paper-topic="bioimpedance"]','impedance','BIOELECTRICAL / PHASE SPACE'],
+    ['#perspective','spectra','FOOD SCIENCE / SPECTRAL PROFILE'],
+    ['#record','systems','INTELLIGENT SYSTEMS / PATTERN FIELD'],
+    ['#innovation','systems','INTELLIGENT SYSTEMS / PATTERN FIELD']
+  ];
+  function targets(){return zones.map(z=>({el:document.querySelector(z[0]),mode:z[1],name:z[2]})).filter(z=>z.el)}
+  function visible(z){const r=z.el.getBoundingClientRect();return r.bottom>110&&r.top<h-80&&r.left<w&&r.right>0}
+  addEventListener('pointermove',e=>{
+    if(e.pointerType==='touch')return;
+    mouseX=e.clientX;mouseY=e.clientY;mouseAt=performance.now();
+    const el=document.elementFromPoint(mouseX,mouseY);
+    const found=targets().find(z=>el && z.el.contains(el));
+    if(found){mode=found.mode}
+  },{passive:true});
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const line=(points,color,lw=1)=>{
+    ctx.strokeStyle=color;ctx.lineWidth=lw;ctx.beginPath();
+    for(let i=0;i<points.length;i++){const p=points[i];i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1])}
+    ctx.stroke();
   };
-  resize();
-  window.addEventListener('resize', resize, {passive: true});
-  window.addEventListener('pointermove', e => {
-    if (e.pointerType === 'touch') return;
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    lastPointer = performance.now();
-  }, {passive: true});
-
-  const draw = time => {
-    if (!document.hidden) {
-      const t = time * 0.001;
-      const autoX = width * (0.5 + 0.22 * Math.sin(t * 0.27) + 0.06 * Math.sin(t * 0.69));
-      const autoY = height * (0.5 + 0.18 * Math.cos(t * 0.31) + 0.06 * Math.sin(t * 0.48));
-      const followMouse = time - lastPointer < 3500;
-      const targetX = followMouse ? mouseX : autoX;
-      const targetY = followMouse ? mouseY : autoY;
-      centerX += (targetX - centerX) * 0.045;
-      centerY += (targetY - centerY) * 0.045;
-      ctx.clearRect(0, 0, width, height);
-
-      dots.forEach((p, i) => {
-        const orbit = 12 + Math.sqrt(i) * 7;
-        const angle = p.phase + t * (i % 2 ? 0.9 : -0.8);
-        const tx = centerX + Math.cos(angle) * orbit;
-        const ty = centerY + Math.sin(angle) * orbit;
-        p.vx = (p.vx + (tx - p.x) * 0.055) * 0.78;
-        p.vy = (p.vy + (ty - p.y) * 0.055) * 0.78;
-        p.x += p.vx;
-        p.y += p.vy;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, i % 5 === 0 ? 2.1 : 1.2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(49,92,126,' + (0.20 + (1 - i / dots.length) * 0.42) + ')';
-        ctx.fill();
-      });
+  function signal(t,r){
+    const cyan='rgba(112,239,236,.89)',soft='rgba(124,227,232,.3)',gold='rgba(241,205,132,.83)';
+    if(mode==='impedance'){
+      for(let k=0;k<3;k++){
+        let pts=[];for(let i=0;i<=95;i++){const u=i/95,v=(u-.5)*r*1.85;
+          pts.push([v,Math.sin(u*(9+k*4)+t*(1+k*.3))*Math.exp(-u*1.2)*(r*.4-k*5)+k*17-13]);}
+        line(pts,k===1?gold:cyan,k===1?1.8:1.1);
+      }
+      ctx.strokeStyle=soft;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(0,0,r*.55,r*.24,-.55,0,Math.PI*2);ctx.stroke();
+    } else if(mode==='blood'){
+      for(let i=0;i<7;i++){
+        const a=i*2.4+t*.17,px=Math.sin(a)*r*.56,py=Math.cos(a*1.3)*r*.46;
+        ctx.save();ctx.translate(px,py);ctx.rotate(a*.52);ctx.strokeStyle=i%2?cyan:gold;
+        ctx.lineWidth=1.2;ctx.beginPath();ctx.ellipse(0,0,12+3*Math.sin(t+i),8,0,0,Math.PI*2);ctx.stroke();
+        ctx.strokeStyle=soft;ctx.beginPath();ctx.ellipse(0,0,6,3.5,0,0,Math.PI*2);ctx.stroke();ctx.restore();
+      }
+      line([[-r*.7,0],[r*.7,0]],soft,.6);
+    } else if(mode==='entomology'){
+      for(const side of [-1,1]){
+        ctx.save();ctx.scale(side,1);ctx.strokeStyle=cyan;ctx.lineWidth=1.1;ctx.beginPath();
+        ctx.moveTo(0,12);ctx.bezierCurveTo(8,-57,67,-61,70,-19);
+        ctx.bezierCurveTo(61,9,22,22,0,12);ctx.stroke();
+        for(let i=0;i<6;i++){
+          const endX=30+i*7,endY=-49+i*7;
+          line([[0,12],[endX*.55,-6+i*2],[endX,endY]],i%2?soft:gold,.85);
+          line([[endX*.55,-6+i*2],[endX+7,-1+i*4]],soft,.6);
+        }
+        ctx.restore();
+      }
+      line([[0,-33],[0,31]],gold,1.8);
+    } else if(mode==='behavior'){
+      for(let k=0;k<3;k++){
+        let pts=[];for(let i=0;i<85;i++){const u=i/84,px=(u-.5)*r*1.8,spike=Math.pow(Math.max(0,Math.sin(u*22+t*.9+k*2)),12);
+          pts.push([px,(k-1)*20-22*spike+4*Math.sin(u*11+k+t*.3)]);}
+        line(pts,k===1?gold:cyan,1.2);
+      }
+      for(let j=0;j<12;j++){let px=(j/12-.5)*r*1.7;line([[px,48],[px,48-6-14*(1+Math.sin(j*2.7+t))*.5]],soft,1.1)}
+    } else if(mode==='spectra'){
+      let pts=[];for(let i=0;i<=120;i++){const u=i/120,pk=(m,s,a)=>a*Math.exp(-Math.pow((u-m)/s,2));
+        const amp=pk(.21,.045,33)+pk(.46,.09,19)+pk(.65,.029,52)+pk(.82,.06,23);
+        pts.push([(u-.5)*r*1.85,40-amp-4*Math.sin(u*40+t)]);}
+      line(pts,cyan,1.8);
+      for(let k=0;k<9;k++)line([[k*r*.21-r*.87,43],[k*r*.21-r*.87,49]],soft,.8);
+      line([[-r*.91,43],[r*.91,43]],gold,1);
+    } else {
+      for(let k=-4;k<=4;k++){
+        let pts=[];for(let i=0;i<=90;i++){const u=i/90;pts.push([(u-.5)*r*1.9,k*12 + 12*Math.sin(u*8+k*.7+t*.55)*Math.cos(u*5+t*.3)])}
+        line(pts,k===0?gold:soft,k===0?1.5:.8);
+      }
+      for(let i=0;i<8;i++){const a=i*Math.PI/4+t*.12;ctx.fillStyle=cyan;ctx.fillRect(Math.cos(a)*r*.6-1,Math.sin(a)*r*.5-1,2,2)}
     }
-    requestAnimationFrame(draw);
-  };
-  requestAnimationFrame(draw);
+  }
+  function paint(time){
+    requestAnimationFrame(paint);
+    if(!on||document.hidden||time-frameAt<32)return;
+    frameAt=time;
+    const t=time*.001,manual=time-mouseAt<4300;
+    const available=targets().filter(visible);
+    const z=available.length?available[Math.floor(t/7)%available.length]:null;
+    if(!manual&&z)mode=z.mode;
+    const rect=z&&z.el.getBoundingClientRect();
+    const autoX=rect?clamp(rect.left+rect.width*.58,90,w-90):w*(.5+.23*Math.sin(t*.31));
+    const autoY=rect?clamp(rect.top+Math.min(rect.height*.5,165),90,h-90):h*(.45+.18*Math.cos(t*.28));
+    const targetX=manual?mouseX:autoX,targetY=manual?mouseY:autoY;
+    x+=(targetX-x)*(manual?.13:.025);y+=(targetY-y)*(manual?.13:.025);
+    const r=manual?84:68;ctx.clearRect(0,0,w,h);
+    ctx.save();ctx.translate(x,y);
+    const background=ctx.createRadialGradient(0,0,8,0,0,r);
+    background.addColorStop(0,'rgba(8,32,47,.90)');background.addColorStop(.83,'rgba(13,37,55,.80)');background.addColorStop(1,'rgba(13,37,55,.05)');
+    ctx.fillStyle=background;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.beginPath();ctx.arc(0,0,r-3,0,Math.PI*2);ctx.clip();
+    ctx.strokeStyle='rgba(141,212,221,.10)';ctx.lineWidth=.7;
+    for(let k=-r;k<r;k+=16){ctx.beginPath();ctx.moveTo(k,-r);ctx.lineTo(k,r);ctx.moveTo(-r,k);ctx.lineTo(r,k);ctx.stroke()}
+    signal(t,r);
+    let sweep=(t*.36%2)-1;line([[sweep*r,-r],[sweep*r,r]],'rgba(245,207,131,.3)',.9);
+    ctx.restore();
+    ctx.strokeStyle='rgba(121,230,226,.84)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(0,0,r-1,t*.23,t*.23+Math.PI*.76);ctx.stroke();
+    ctx.beginPath();ctx.arc(0,0,r+6,-t*.14,-t*.14+Math.PI*.34);ctx.stroke();
+    ctx.strokeStyle='rgba(246,211,132,.9)';ctx.beginPath();ctx.moveTo(-r-10,0);ctx.lineTo(-r+3,0);ctx.moveTo(r-3,0);ctx.lineTo(r+10,0);ctx.moveTo(0,-r-10);ctx.lineTo(0,-r+3);ctx.stroke();
+    ctx.fillStyle='rgba(232,255,252,.95)';ctx.font='600 9px Arial,sans-serif';
+    const lbl={impedance:'BIOIMPEDANCE',blood:'HEMATOLOGY',behavior:'TEMPORAL AI',entomology:'ENTOMOLOGY',spectra:'SPECTROSCOPY',systems:'MULTIMODAL AI'}[mode];
+    ctx.textAlign='center';ctx.fillText(lbl,0,r*.75);
+    ctx.font='8px Arial,sans-serif';ctx.fillStyle='rgba(137,232,229,.75)';ctx.fillText('GENERATIVE FIELD / NOT A MEASUREMENT',0,r*.75+11);
+    ctx.restore();
+  }
+  requestAnimationFrame(paint);
 })();
+
