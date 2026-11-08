@@ -34,7 +34,7 @@ assert len(biblio.get('papers', [])) == 42, 'Publication inventory should be rev
 assert len(biblio.get('chapters', [])) == 12
 assert len(biblio.get('abstracts', [])) == 63
 assert len(career.get('media', [])) >= 22
-for name in ['index.html', 'styles.css', 'data.js', 'app.js', 'bibliography.js', 'career-data.js', 'career.js', 'integrated.js']:
+for name in ['index.html', 'archive.html', 'styles.css', 'data.js', 'app.js', 'bibliography.js', 'career-data.js', 'career.js', 'integrated.js']:
     shutil.copy2(ROOT / name, SITE / name)
 
 # GitHub Pages project sites live under /repository/, so social preview images
