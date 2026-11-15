@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-14T15:12:57+00:00",
+  "updated_at": "2026-11-15T15:43:50+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
-    "papers": "OK, ORCID-filtered OpenAlex; 67 retained"
+    "papers": "OK, ORCID-filtered OpenAlex; 68 retained"
   },
   "news": [],
   "papers": [
@@ -86,6 +86,15 @@
       "url": "https://doi.org/10.1016/j.atech.2026.102548",
       "doi": "https://doi.org/10.1016/j.atech.2026.102548",
       "openalex_id": "https://openalex.org/W7211976751"
+    },
+    {
+      "title": "IoT-Based Smart PPE Compliance and Usage Monitoring System for Hazardous Underground Environments",
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "International Conference on Sustainability, Innovation & Technology (ICSIT)",
+      "url": "https://doi.org/10.1109/icsit70359.2026.11765288",
+      "doi": "https://doi.org/10.1109/icsit70359.2026.11765288",
+      "openalex_id": "https://openalex.org/W7226008309"
     },
     {
       "title": "Investigating the Relationship Between Environmental Conditions and Goat Health Using Geospatial Analysis, NDVI and Machine Learning Across Multiple Grazing Environments",
