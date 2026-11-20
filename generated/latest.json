@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T17:28:19+00:00",
+  "updated_at": "2026-11-20T17:03:00+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
     "papers": "OK, ORCID-filtered OpenAlex; 68 retained"
@@ -511,6 +511,15 @@
       "openalex_id": "https://openalex.org/W4404685622"
     },
     {
+      "title": "Estimating Salmonella Typhimurium Growth on Chicken Breast Fillets Under Simulated Less-Than-Truckload Dynamic Temperature Abuse",
+      "year": 2024,
+      "date": "2024-11-01",
+      "venue": "Foodborne Pathogens and Disease",
+      "url": "https://doi.org/10.1089/fpd.2024.0018",
+      "doi": "https://doi.org/10.1089/fpd.2024.0018",
+      "openalex_id": "https://openalex.org/W4401185928"
+    },
+    {
       "title": "PSIII-29 Evaluating the efficacy of bioelectrical impedance analysis using machine learning models for the classification of parasitized goats",
       "year": 2024,
       "date": "2024-09-01",
@@ -527,15 +536,6 @@
       "url": "https://doi.org/10.3390/foods13162632",
       "doi": "https://doi.org/10.3390/foods13162632",
       "openalex_id": "https://openalex.org/W4401730189"
-    },
-    {
-      "title": "Estimating Salmonella Typhimurium Growth on Chicken Breast Fillets Under Simulated Less-Than-Truckload Dynamic Temperature Abuse",
-      "year": 2024,
-      "date": "2024-07-31",
-      "venue": "Foodborne Pathogens and Disease",
-      "url": "https://doi.org/10.1089/fpd.2024.0018",
-      "doi": "https://doi.org/10.1089/fpd.2024.0018",
-      "openalex_id": "https://openalex.org/W4401185928"
     },
     {
       "title": "Development of Predictive Classification Models and Extraction of Signature Wavelengths for the Identification of Spoilage in Chicken Breast Fillets During Storage Using Near Infrared Spectroscopy",
