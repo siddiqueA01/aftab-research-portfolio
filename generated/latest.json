@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T17:03:00+00:00",
+  "updated_at": "2026-11-21T16:15:15+00:00",
   "sources": {
     "news": "OK, 0 recent matches, 0 retained",
     "papers": "OK, ORCID-filtered OpenAlex; 68 retained"
@@ -169,7 +169,7 @@
       "openalex_id": "https://openalex.org/W4416336977"
     },
     {
-      "title": "PSIX-13 Enhancing livestock health monitoring: AI driven approaches for anemia detection in small ruminants.",
+      "title": "Enhancing livestock health monitoring: AI driven approaches for anemia detection in small ruminants.",
       "year": 2025,
       "date": "2025-10-01",
       "venue": "Journal of Animal Science",
@@ -592,7 +592,7 @@
       "openalex_id": "https://openalex.org/W4392651438"
     },
     {
-      "title": "75 AI-Enhanced Hematocrit Analysis: Revolutionizing rapid anemia detection in small ruminants",
+      "title": "AI-Enhanced Hematocrit Analysis: Revolutionizing rapid anemia detection in small ruminants",
       "year": 2024,
       "date": "2024-03-01",
       "venue": "Journal of Animal Science",
